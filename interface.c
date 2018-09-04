@@ -1,33 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<inttypes.h>
-
-#ifdef __linux__
-	#define OS 0
-#elif _WIN32 || _WIN64
-	#define OS 1
-#elif __APPLE__
-	#define OS 2
-#endif
-
-#define DF 1
-#define GO 2
-#define MS 3
-
-int8_t printa_menu();
-void votar();
-int8_t saberEstado();
-void limpa_tela();
-
-void main(){
-	
-	int8_t opcao;
-	
-	opcao = printa_menu();
-	
-	if (opcao == 3)
-		votar();
-}
+#include "interface.h"
 
 //Função somente para a limpeza do terminal
 void limpa_tela(){
@@ -64,44 +35,6 @@ int8_t saberEstado(){
 	return opcao;
 }
 
-//Leitura do voto do eleitor
-void votar(){
-	
-	int8_t estado;
-	uint16_t codigo;
-	
-	estado = saberEstado();
-	
-	switch (estado){
-		case DF:
-			limpa_tela();
-			printf("\t\t\tVOTO PARA CANDIDATO DISTRITAL\n\n");
-			
-			printf("Digite o código do candidato que deseja votar: ");
-			scanf("%hd", &codigo);
-			while (codigo > 100 || codigo < 0 || codigo > UINT16_MAX){
-				printf("Código inválido. Digite novamente o código do candidato a distrital: ");
-				scanf("%hd", &codigo);
-			}
-			break;
-		case GO:
-			exec_voto:
-			limpa_tela();
-			printf("\t\t\tVOTO PARA CANDIDATO REGIONAL\n\n");
-			
-			printf("Digite o código do candidato que deseja votar: ");
-			scanf("%hd", &codigo);
-			while (codigo > 100 || codigo < 0 || codigo > UINT16_MAX){
-				printf("Código inválido. Digite novamente o código do candidato a regional: ");
-				scanf("%hd", &codigo);
-			}
-			break;
-		case MS:
-			goto exec_voto;
-			break; //Adicionado por padrão de implementação
-	}
-}
-
 int8_t printa_menu(){
 	
 	limpa_tela();
@@ -112,16 +45,17 @@ int8_t printa_menu(){
 		"\t\t--Bem vindo ao sistema de eleição do IESB--\n\n"
 		"\t\t\t\tMENU\n\n"
 		"Digite a opção que deseja:\n"
-		"(1) Consultar todos os nomes possíveis\n"
-		"(2) Fazer uma busca por um nome específico\n"
-		"(3) Votar em um candidato\n"
-		"(4) Votar x vezes\n"
-		"(5) Sair\n"
+		"(1) Consultar todos os candidatos distritais (DF) ou regionais (GO e ES) por estado.\n"
+		"(2) Fazer uma consulta por um candidato em específico.\n"
+		"(3) Consultar todos os candidatos de um determinado partido.\n"
+		"(4) Votar em um candidato.\n"
+		"(5) Multiplicar voto x vezes.\n"
+		"(6) Sair\n"
 	);
 	scanf("%hhd", &opcao); //Lê 8 bits de dados
 	
 	//Garante que o usuário digite corretamente a opção desejada
-	while ((opcao != 1) && (opcao != 2) && (opcao != 3) && (opcao != 4) && (opcao != 5)){
+	while ((opcao != 1) && (opcao != 2) && (opcao != 3) && (opcao != 4) && (opcao != 5) && (opcao != 6)){
 		printf("Opcao inválida. Insira novamente a opção que deseja\n");
 		scanf("%hhd", &opcao);
 	}
