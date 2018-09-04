@@ -885,7 +885,6 @@ Concorrendo;JOSÉ DA LUZ BORGES DA SILVA;ZÉ DA LUZ;Deputado Estadual;18567;REDE
 Concorrendo;VALDEZ DE SIQUEIRA CAPRA;ZENI;Deputado Estadual;19190;PODE;Aguardando julgamento;A MUDANÇA É AGORA IV
 Concorrendo;JOSE ONOFRE SOARES;ZÉONOFRE;Deputado Estadual;90525;PROS;Aguardando julgamento;PROS
 Concorrendo;JOSE FILHO DO CARMO DE MEDEIROS E SILVA;ZEZIM;Deputado Estadual;11112;PP;Deferido;PP
-Situação Pós-Pleito;Nome Completo;Nome Urna;Cargo;Número;Partido;Situação;Coligação
 Concorrendo;AAVA SANTIAGO AGUIAR;AAVA SANTIAGO;Deputado Estadual;70456;AVANTE;Aguardando julgamento;PRA CUIDAR DE GOIÁS
 Concorrendo;ABDUL HAMID SEBBA;ABDUL SEBBA;Deputado Estadual;17123;PSL;Deferido;PSL
 Concorrendo;ADELAIR ROSARIO BATISTA LEITE;ADELAIR BATISTA;Deputado Estadual;25147;DEM;Renúncia;A MUDANÇA É AGORA III

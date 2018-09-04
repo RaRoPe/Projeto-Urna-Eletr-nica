@@ -353,7 +353,6 @@ Concorrendo;ZELIA DE SOUZA;ZELIA SOUZA;Deputado Estadual;35100;PMB;Aguardando ju
 Concorrendo;JOSÉ LOPEZ DOS SANTOS SOBRINHO;ZÉ LOPES;Deputado Estadual;43456;PV;Deferido;O Nosso Movimento é por Mudança
 Concorrendo;ZENAIDE ESPINDOLA FLORES;"ZENAIDE ";Deputado Estadual;15007;MDB;Deferido;MDB
 Concorrendo;JOSÉ ROBERTO TEIXEIRA;ZÉ TEIXEIRA;Deputado Estadual;25121;DEM;Aguardando julgamento;AVANÇAR COM RESPONSABILIDADE I
-Situação Pós-Pleito;Nome Completo;Nome Urna;Cargo;Número;Partido;Situação;Coligação
 Concorrendo;ADALBERTO MUNIZ DA SILVA;ADALBERTO MUNIZ;Deputado Estadual;19144;PODE;Deferido;PODE
 Concorrendo;ADEMIR ALMEIDA DA SILVA FIDÉLIS;ADEMIR ALMEIDA;Deputado Estadual;11001;PP;Aguardando julgamento;AVANÇAR COM RESPONSABILIDADE II
 Concorrendo;ADRIANA DA SILVA;ADRIANA DA SILVA;Deputado Estadual;70400;AVANTE;Deferido;AVANÇAR COM RESPONSABILIDADE III
