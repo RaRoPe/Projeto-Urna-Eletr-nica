@@ -1,21 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
+#include <string.h>
 
 #include "interface.c"
 #include "votar.c"
 #include "validarCPF.c"
 
+#define BUFFERCPF 12
+
 void main(){
 	
-	int8_t opcao = 0;
-	int32_t CPF;
+	int8_t opcao = 0, i;
+	char CPF_aux[BUFFERCPF], CPF[BUFFERCPF];
+	bool valido = FALSE; //Condição para a verificação da validade do CPF digitado
+	
+	limpa_tela();
 
 	printf("Digite o seu CPF para prosseguir com a votação: ");
-	scanf("%d", &CPF);
+	scanf("%s", CPF);
+	printf("CPF = |%s|\n", CPF);
+	valido = valida_CPF(CPF);
 
-	valida_CPF(CPF);
-
+	while (valido == FALSE){
+		printf("[-] CPF inválido.\nDigite o seu CPF para prosseguir com a votação: ");
+		scanf("%s", CPF);
+		printf("CPF = |%s|\n", CPF);
+		valido = valida_CPF(CPF);
+	}
+	/*
 	while (opcao != 6){
 		opcao = printa_menu(); //Printa o menu para o eleitor
 		
@@ -40,5 +53,5 @@ void main(){
 				exit(0);
 				break;
 		}
-	}
+	}*/
 }
