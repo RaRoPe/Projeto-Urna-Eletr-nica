@@ -73,7 +73,7 @@ bool verifica_segundo_digito(char CPF[12]){
 	
 	resultado = (CPF[0]-'0')*11 + (CPF[1]-'0')*10 + (CPF[2]-'0')*9 + (CPF[3]-'0')*8 + (CPF[4]-'0')*7 + (CPF[5]-'0')*6 + (CPF[6]-'0')*5 + (CPF[7]-'0')*4 + (CPF[8]-'0')*3 + (CPF[9]-'0')*2;
 	
-	printf("RES = %hd\n", resultado/10);
+	//printf("RES = %hd\n", resultado/10);
 	
 	resultado *= 10;
 	resultado %= 11;

@@ -19,16 +19,20 @@ void main(){
 
 	printf("Digite o seu CPF para prosseguir com a votação: ");
 	scanf("%s", CPF);
-	printf("CPF = |%s|\n", CPF);
+	//printf("CPF = |%s|\n", CPF);
 	valido = valida_CPF(CPF);
 
 	while (valido == FALSE){
 		printf("[-] CPF inválido.\nDigite o seu CPF para prosseguir com a votação: ");
 		scanf("%s", CPF);
-		printf("CPF = |%s|\n", CPF);
+		//printf("CPF = |%s|\n", CPF);
 		valido = valida_CPF(CPF);
 	}
-	/*
+	
+	printf("[+] CPF validado com sucesso!\n    Aperte ENTER para continuar");
+	getchar();
+	getchar();
+
 	while (opcao != 6){
 		opcao = printa_menu(); //Printa o menu para o eleitor
 		
@@ -53,5 +57,5 @@ void main(){
 				exit(0);
 				break;
 		}
-	}*/
+	}
 }
