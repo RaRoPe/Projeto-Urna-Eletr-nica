@@ -1,0 +1,8 @@
+#include "validarCPF.h"
+
+bool valida_CPF(int32_t CPF){
+	
+	if (CPF == 123)
+		exit(0);
+	return CPF;
+}

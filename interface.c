@@ -46,7 +46,7 @@ int8_t printa_menu(){
 		"\t\t\t\tMENU\n\n"
 		"Digite a opção que deseja:\n"
 		"(1) Consultar todos os candidatos distritais (DF) ou regionais (GO e ES) por estado.\n"
-		"(2) Fazer uma consulta por um candidato em específico.\n"
+		"(2) Fazer uma consulta pelo número de um candidato.\n"
 		"(3) Consultar todos os candidatos de um determinado partido.\n"
 		"(4) Votar em um candidato.\n"
 		"(5) Multiplicar voto x vezes.\n"

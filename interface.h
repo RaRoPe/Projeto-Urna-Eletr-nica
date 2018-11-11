@@ -6,9 +6,11 @@
 	#define OS 2
 #endif
 
-#define DF 1
-#define GO 2
-#define MS 3
+#if !defined(DF) || !defined(GO) || !defined(MS)
+	#define DF 1
+	#define GO 2
+	#define MS 3
+#endif
 
 int8_t printa_menu();
 int8_t saberEstado();

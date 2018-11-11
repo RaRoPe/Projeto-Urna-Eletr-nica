@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+%\documentclass{abntex2}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tabto}
+\usepackage{hyperref}
+\newcommand{\footnoteref}[1]{\textsuperscript{\ref{#1}}}
+
+\title{O uso do algoritmo LZ78 para a urna eletrônica}
+\autor{Karoline Figueirêdo (1712130043) \and Raphael Rodrigues (1822130030) \and Vitor Basile (1712130083)}
+\date{Novembro 2018}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\begin{abstract}
+Na década de 20, com o crescimento da população brasileira, o número de votos aumentou consideravelmente, de modo que fosse necessário um sistema mais ágil para a contabilização dos votos eleitorais. Sendo assim, desde 1989 até os dias atuais a implantação da urna eletrônica tem sido um sucesso, diminuindo, com o avanço da tecnologia, cada vez mais o tempo de apuração dos votos eletrônicos. Mas, no decorrer dos anos de implantação da nova tecnologia, surgiram alguns problemas em sua composição, como por exemplo uma maior segurança no seu sistema, para prevenir fraudes e roubo de informações, houve uma demanda por um sistema mais rápido e consistente, que não apresentasse problemas computacionais, como também uma necessidade de se carregar os votos da urna para um dispositivo externo. A partir disso, a compressão de dados foi vista como uma ferramenta essencial para a integridade e velocidade da urna eletrônica. Neste artigo utilizaremos o algoritmo de Lempel-Ziv, criado em 1978, denominado LZ78, para realizar a compressão dos dados de modo que seja possível um melhor transporte e armazenamento dos votos eletrônicos.
+\end{abstract}
+
+\newpage
+
+\section{Descrição geral do sistema}
+
+
+\subsection{Descrição dos usuários}
+\begin{itemize}
+\item Eleitor - Será possível realizar a votação em um número limitado de candidatos, sendo um de cada cargo (Deputado Distrital, Deputado Federal, Governador, Senador e Presidente).
+\end{itemize}
+
+\section{Requisitos Funcionais}
+\begin{itemize}
+\item [RF001] O administrador deverá cadastrar um novo eleitor.
+\item [RF002] E eleitor deverá efetuar login.
+\item [RF003] O eleitor poderá realizar uma busca por nome ou número do candidato.
+\item [RF004] O eleitor poderá realizar uma busca pelo nome do partido do candidato desejado.
+\item [RF005] O eleitor poderá realizar uma busca pelo cargo do candidato.
+\item [RF006] O eleitor deverá efetuar o seu voto.
+\end{itemize}
+
+\section{Requisitos não funcionais}
+\begin{itemize}
+\item [NF001] O software deverá realizar a busca por arquivos de texto.
+\item [NF002] O software deverá realizar a compressão e descompactação de arquivos de dados com sucesso.
+\item [NF003] Os arquivos comprimidos deverão ser no formato GZIP.
+\item [NF004] O software deverá ser operacionalizado no sistema operacional Windows, Linux ou MAC OS.
+\item [NF005] O tempo de desenvolvimento não deve ultrapassar 4 meses a partir dessa data.
+\item [NF006] A interface deve ser intuitiva e fácil de utilizar.
+\end{itemize}
+
+\section{Descrição da interface com o usuário}
+
+%\bibliography{referencias}
+%\bibliographystyle{plain}
+
+\end{document}

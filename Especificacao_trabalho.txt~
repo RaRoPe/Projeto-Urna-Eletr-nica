@@ -1,0 +1,31 @@
+Estados que faremos DF, GOIÁS, MATO GROSSO
+
+Fazer o envio de dois arquivos por grupo. 
+
+				Arquivo 1
+
+Iremos gerar uma lista de candidatos locais regionais e federais (disponibilizado). 
+Cada região tem 1 representante. 
+Cada eleitor só pode votar uma vez em um candidato.
+Domínio de 1 a 100.
+Tamanho do nome - char[35].
+Código do partido 1 a 50.
+Cada grupo representa uma região.
+Cadastro do candidato regional.
+Um candidato pra cada estado.
+Fazer uma eleição regional. Eleitor digita o código e vota no candidato.
+
+Estrutura do arquivo:
+codigo_candidato;nome_do_candidato;codigo_do_partido
+
+				Arquivo 2
+
+Estrutura do arquivo: (cabeçalho e datalhe)
+identificação;CPF;numero_sequencial_de_voto;regiao;codigo_municipio;codigo_do_candidato_federal;codigo_do_partido_federal;codigo_do_cadidato_regional;codigo_do_partido_regional
+
+Mínimo de votos = 100.000
+Máximo de votos = 50.000.000
+
+Botão de multiplicar votos - votar 50 vezes com candidatos e multiplicar (pode colocar pro usuário multiplicar a quantidade dos votos também).
+
+Região é a letra do grupo (H)

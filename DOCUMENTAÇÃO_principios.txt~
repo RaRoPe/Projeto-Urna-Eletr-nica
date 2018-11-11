@@ -1,0 +1,19 @@
+Compressão
+
+executar sobre o arquivo desejado o seguinte comando
+sed 'y/áÁàÀãÃâÂéÉêÊíÍóÓõÕôÔúÚçÇ/aAaAaAaAeEeEiIoOoOoOuUcC/' < <nome_do_arquivo_para_converter.txt> > <nome_do_arquivo_convertido.txt>
+
+converter o arquivo pra binário com o comando
+python to_binary.py
+
+comprimir o binário do arquivo com o comando
+gcc -g -std=c99 -o prog
+./prog <arquivo_desejado.txt>
+
+Arquivo de 22,500 bytes -> 17,951 bytes com 1s, com 20,21% de compressão.
+Arquivo de 45,000 bytes -> 34,312 bytes com 5s, com 23,75% de compressão.
+Arquivo de 90,000 bytes -> 64,305 bytes com 17s, com 28,55% de compressão.
+Arquivo de 180,000 bytes -> 122,214 bytes com 59s, com 32,08% de compressão.
+Arquivo de 360,000 bytes -> 235,178 bytes com 202s, com 34,67% de compressão.
+Arquivo de 800,000 bytes -> 447,572 bytes com 710s, com 44,05% de compressão.
+Arquivo de 1,440,000 bytes -> 841,471 bytes com 2555s, com 41,56% de compressão.

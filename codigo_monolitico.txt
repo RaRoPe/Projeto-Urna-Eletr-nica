@@ -1,0 +1,133 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<inttypes.h>
+
+#ifdef __linux__
+	#define OS 0
+#elif _WIN32 || _WIN64
+	#define OS 1
+#elif __APPLE__
+	#define OS 2
+#endif
+
+#define DF 1
+#define GO 2
+#define MS 3
+
+int8_t printa_menu();
+void votar();
+int8_t saberEstado();
+void limpa_tela();
+
+void main(){
+	
+	int8_t opcao;
+	
+	opcao = printa_menu();
+	
+	if (opcao == 3)
+		votar();
+}
+
+//Função somente para a limpeza do terminal
+void limpa_tela(){
+	if (OS == 0)
+		system("clear");
+	else if (OS == 1)
+		system("cls");
+	else if (OS == 2)
+		printf(" ");
+	else {
+		printf("System not recognized.\n");
+		exit(0);
+	}
+}
+
+//Menu para saber do estado do eleitor que deseja votar
+int8_t saberEstado(){
+	
+	int8_t opcao;
+	
+	printf( "Escolha o seu estado dentre as opções\n"
+		"(1) Distrito Federal\n"
+		"(2) Goiás\n"
+		"(3) Mato Grosso do Sul\n"
+		"Qual o seu estado: "
+	);
+	scanf("%hhd", &opcao);
+	
+	while (opcao != 1 && opcao != 2 && opcao != 3){
+		printf("Opção inválida. Por favor, insira o seu estado novamente: ");
+		scanf("%hhd", &opcao);
+	}
+	
+	return opcao;
+}
+
+//Leitura do voto do eleitor
+void votar(){
+	
+	int8_t estado;
+	uint16_t codigo;
+	
+	estado = saberEstado();
+	
+	switch (estado){
+		case DF:
+			limpa_tela();
+			printf("\t\t\tVOTO PARA CANDIDATO DISTRITAL\n\n");
+			
+			printf("Digite o código do candidato que deseja votar: ");
+			scanf("%hd", &codigo);
+			while (codigo > 100 || codigo < 0 || codigo > UINT16_MAX){
+				printf("Código inválido. Digite novamente o código do candidato a distrital: ");
+				scanf("%hd", &codigo);
+			}
+			break;
+		case GO:
+			exec_voto:
+			limpa_tela();
+			printf("\t\t\tVOTO PARA CANDIDATO REGIONAL\n\n");
+			
+			printf("Digite o código do candidato que deseja votar: ");
+			scanf("%hd", &codigo);
+			while (codigo > 100 || codigo < 0 || codigo > UINT16_MAX){
+				printf("Código inválido. Digite novamente o código do candidato a regional: ");
+				scanf("%hd", &codigo);
+			}
+			break;
+		case MS:
+			goto exec_voto;
+			break; //Adicionado por padrão de implementação
+	}
+}
+
+int8_t printa_menu(){
+	
+	limpa_tela();
+	
+	int8_t opcao;
+	
+	printf(
+		"\t\t--Bem vindo ao sistema de eleição do IESB--\n\n"
+		"\t\t\t\tMENU\n\n"
+		"Digite a opção que deseja:\n"
+		"(1) Consultar todos os nomes possíveis\n"
+		"(2) Fazer uma busca por um nome específico\n"
+		"(3) Votar em um candidato\n"
+		"(4) Votar x vezes\n"
+		"(5) Sair\n"
+	);
+	scanf("%hhd", &opcao); //Lê 8 bits de dados
+	
+	//Garante que o usuário digite corretamente a opção desejada
+	while ((opcao != 1) && (opcao != 2) && (opcao != 3) && (opcao != 4) && (opcao != 5)){
+		printf("Opcao inválida. Insira novamente a opção que deseja\n");
+		scanf("%hhd", &opcao);
+	}
+	
+	//printf("%"PRId8"", opcao); //Printa 8 bits de dados
+	//printf("0x%08x", opcao); //Printa 8 bytes em HEXA
+	
+	return opcao;
+}

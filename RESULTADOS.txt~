@@ -1,0 +1,242 @@
+-------------------------------------------------------------------------------------------
+				    COMPRESSÃO TXT
+-------------------------------------------------------------------------------------------
+					TESTE 1
+
+NOME						TAMANHO
+Arquivo 1 					1,961 bytes
+compression1.lz78 				3,630 bytes
+Time taken 0.126951s
+				************************
+					TESTE 2
+
+NOME						TAMANHO
+Arquivo 2					4,131 bytes
+compression2.lz78 				7,385 bytes
+Time taken 0.272821s
+
+				************************
+					TESTE 3
+
+NOME						TAMANHO
+Arquivo 3					8,395 bytes
+compression3.lz78 				14,197 bytes
+Time taken 0.760331s
+
+				************************
+					TESTE 4
+
+NOME						TAMANHO
+Arquivo 4					16,791 bytes
+compression4.lz78 				26,613 bytes
+Time taken 2.435973s
+
+				************************
+					TESTE 5
+
+NOME						TAMANHO
+Arquivo 5					33,583 bytes
+compression5.lz78 				48,681 bytes
+Time taken 8.422670s
+
+				************************
+					TESTE 6
+
+NOME						TAMANHO
+Arquivo 6					67,167 bytes
+compression6.lz78 				86,536 bytes
+Time taken 28.672253s
+
+				************************
+					TESTE 7
+
+NOME						TAMANHO
+Arquivo 7					134,335 bytes
+compression7.lz78 				150,417 bytes
+Time taken 100.100644s
+
+				************************
+					TESTE 8
+
+NOME						TAMANHO
+Arquivo 8					268,671 bytes
+compression8.lz78 				245,161 bytes
+Time taken 348.496383s
+
+				************************
+					TESTE 9
+
+NOME						TAMANHO
+Arquivo 9					537,343 bytes
+compression9.lz78 				371,180 bytes
+Time taken 1182.196015s
+
+				************************
+					TESTE 10
+
+NOME						TAMANHO
+Arquivo 10					1,074,687 bytes
+compression10.lz78 				510,191 bytes
+Time taken 3947.590804s
+
+-------------------------------------------------------------------------------------------
+				    COMPRESSÃO BIN
+-------------------------------------------------------------------------------------------
+					TESTE 1
+
+NOME						TAMANHO
+BINCONV1.txt 					15,697 bytes
+compression1.lz78 				9,461 bytes
+Time taken 0.665021s
+				************************
+					TESTE 2
+
+NOME						TAMANHO
+BINCONV2.txt					33,067 bytes
+compression2.lz78 				18,408 bytes
+Time taken 2.159790s
+
+				************************
+					TESTE 3
+
+NOME						TAMANHO
+BINCONV3.txt					67,199 bytes
+compression3.lz78 				34,156 bytes
+Time taken 7.323330s
+
+				************************
+					TESTE 4
+
+NOME						TAMANHO
+BINCONV4.txt					134,407 bytes
+compression4.lz78 				62,122 bytes
+Time taken 24.725726s
+
+				************************
+					TESTE 5
+
+NOME						TAMANHO
+BINCONV5.txt					268,823 bytes
+compression5.lz78 				115,631 bytes
+Time taken 84.149721s
+
+				************************
+					TESTE 6
+
+NOME						TAMANHO
+BINCONV6.txt					537,655 bytes
+compression6.lz78 				217,289 bytes
+Time taken 293.679460s
+
+				************************
+					TESTE 7
+
+NOME						TAMANHO
+BINCONV7.txt					1,075,319 bytes
+compression7.lz78 				399,462 bytes
+Time taken 1041.056583s
+
+				************************
+					TESTE 8
+
+NOME						TAMANHO
+BINCONV8.txt					2,150,647 bytes
+compression8.lz78 				245,161 bytes
+Time taken 3802.445415s
+
+				************************
+					TESTE 9
+
+NOME						TAMANHO
+BINCONV9.txt					4,301,303 bytes
+compression9.lz78 				722,215 bytes
+Time taken 15020.846992s
+
+				************************
+					TESTE 10
+
+NOME						TAMANHO
+BINCONV10.txt					8,602,615 bytes
+compression10.lz78 				510,191 bytes
+Time taken 3947.590804
+
+-------------------------------------------------------------------------------------------
+				    DESCOMPRESSÃO TXT
+-------------------------------------------------------------------------------------------
+					TESTE 1
+
+NOME						TAMANHO
+compression1.lz78				3,630 bytes
+saida1.txt 					 bytes
+Time taken 0.131252s
+				************************
+					TESTE 2
+
+NOME						TAMANHO
+compression2.lz78				4,131 bytes
+saida2.txt 					7,385 bytes
+Time taken 0.303561s
+
+				************************
+					TESTE 3
+
+NOME						TAMANHO
+compression3.lz78				8,395 bytes
+saida3.txt	 				14,197 bytes
+Time taken 0.697019s
+
+				************************
+					TESTE 4
+
+NOME						TAMANHO
+compression4.lz78				16,791 bytes
+saida4.txt	 				26,613 bytes
+Time taken 2.171272s
+
+				************************
+					TESTE 5
+
+NOME						TAMANHO
+compression5.lz78				33,583 bytes
+saida5.txt	 				48,681 bytes
+Time taken 6.992853s
+
+				************************
+					TESTE 6
+
+NOME						TAMANHO
+compression6.lz78				67,167 bytes
+saida6.txt 				86,536 bytes
+Time taken 24.604560s
+
+				************************
+					TESTE 7
+
+NOME						TAMANHO
+compression7.lz78				134,335 bytes
+saida7.txt	 				150,417 bytes
+Time taken 90.096856s
+
+				************************
+					TESTE 8
+
+NOME						TAMANHO
+compression8.lz78				268,671 bytes
+saida8.txt	 				245,161 bytes
+Time taken 332.704415s
+
+				************************
+					TESTE 9
+
+NOME						TAMANHO
+compression9.lz78				537,343 bytes
+saida9.txt	 				371,180 bytes
+Time taken 1182.196015s
+
+				************************
+					TESTE 10
+
+NOME						TAMANHO
+compression10.lz78				1,074,687 bytes
+saida10.txt					510,191 bytes
+Time taken 3947.590804s

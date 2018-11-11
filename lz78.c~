@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define UINT_MAX 0x7FFFFFFF
+//#include <string.h>
+
+/* Exemplo de arquivo .txt
+ * wabba wabba 
+ * Formato do arquivo comprimido
+ * <índice, letra_do_alfabeto>
+ * 0,w
+ * 0,a
+ * 0,b
+ * 3,a
+ * 0,\s
+ * 1,a
+ * 2,b
+ * 2,\s
+*/
+
+//Fazer a função comprimir o arquivo texto
+void compress(FILE *fp){
+	char c;
+  
+
+}
+
+//Função de descomprimir o arquivo .lz78
+void decompress(FILE *fp, FILE *fp2){
+	char c, char_lido, palavra_para_arquivo[UINT_MAX];
+  
+	fp = fopen("arquivo1.txt", "r");
+
+	//Verifica existência do arquivo de leitura
+	if (fp == NULL){
+	  	printf("[-] Arquivo inexistente.\n");
+	  	exit(0);
+	}
+  
+	fp2 = fopen("compress.lz78", "r");
+
+	//Verifica existência do arquivo em formato .lz78
+	if (fp2 == NULL){
+	  	printf("[-] Arquivo inexistente.\n");
+	  	exit(0);
+	}
+  
+	while ((c = getc(fp)) != EOF){
+		if (c != ',' && c != '\n'){
+			char_lido = c;
+			printf("%c", c);
+		}
+	}
+  
+	fclose(fp);
+}
+
+void main(){
+	FILE *fp, *fp2;
+	decompress(fp, fp2);
+	compress(fp);
+}

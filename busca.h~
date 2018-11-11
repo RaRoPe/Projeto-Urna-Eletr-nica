@@ -1,0 +1,11 @@
+#if !defined(DF) || !defined(GO) || !defined(MS)
+	#define DF 1
+	#define GO 2
+	#define MS 3
+#endif
+
+void localizar_candidato();
+void print_file(FILE *fp);
+void por_estado();
+void por_numero();
+void do_estado();
