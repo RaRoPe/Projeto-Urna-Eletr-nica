@@ -24,29 +24,23 @@
  * 2,
 */
 
-//Pilha para o arquivo auxiliar, para a inversão da string
 int stack[MAXSIZE];
 int top = -1;
 
-//Função para verificar se a pilha está vazia
 int isempty(){
 	if(top == -1) return 1;
 	else return 0;
 }
 
-//Função para verificar se a pilha está cheia
 int isfull(){
 	if(top == MAXSIZE) return 1;
 	else return 0;
 }
 
-//
 int peek(){
 	return stack[top];
 }
 
-
-//Remoção do topo da pilha
 int pop(){
 	int data;
 	
@@ -59,7 +53,6 @@ int pop(){
 		printf("A pilha está vazia!\n");
 }
 
-//Inserção de elemento na pilha
 int push(int data){
 	if(!isfull()){
 		top = top + 1;   
@@ -69,7 +62,6 @@ int push(int data){
 		printf("A pilha está cheia!\n");
 }
 
-//Fazer a função comprimir o arquivo texto
 void uncompress(FILE **fp, char *nome_arquivo){
 	
 	FILE *fp2, *fp3;
@@ -78,19 +70,14 @@ void uncompress(FILE **fp, char *nome_arquivo){
 	long long int index = 0, index_aux = 0, linha_salva = 0, linha = 1, qtd_linhas = 1;
 	int ret = 0, executa_pop = 0, parada = 0;
 	
-	//Arquivo comprimido
 	*fp = fopen(nome_arquivo, "r");
 	
-	//Verifica existência do arquivo de leitura
  	if (*fp == NULL){
- 		printf("[-] Arquivo inexistente.\n");
  		exit(0);
  	}
  	
- 	//Arquivo de descompactação do texto
- 	fp2 = fopen("saida.txt", "w+");
+ 	fp2 = fopen("saida8.txt", "w+");
 	
-	//Arquivo que salvará a palavra composta por mais de um caracter, será colocado na ordem inversa
 	fp3 = fopen("auxiliar.txt", "w+");
 	
  	while (fscanf(*fp, "%lld,%c\n", &index, &char_lido) != EOF){
@@ -101,7 +88,6 @@ void uncompress(FILE **fp, char *nome_arquivo){
 			else
 				fprintf(fp2, "\n");
 // 			printf("INSERIU!\n");
-			//Lê o arquivo auxiliar ao contrário para colocar no fp2
 			while ((c = getc(fp3)) != EOF){
 				executa_pop = 1;
 // 				printf("c = %c", c);
@@ -132,17 +118,15 @@ void uncompress(FILE **fp, char *nome_arquivo){
 				else {
 					ret = fscanf(*fp, "%lld,%c\n", &index, &char_lido);
 // 					printf("INDEX = %lld, CHAR_LIDO = %c\n", index, char_lido);
-					//Procurou em todas as linhas e não achou um símbolo com 0
 					if (ret == EOF){
-						//Chegou ao final do aquivo ou deu erro porque o arquivo era inválido
 						exit(0);
 					}
-					qtd_linhas = 1;//Zera a quantidade de linhas pra começar do começo do arquivo
-					index_aux = index;//Salva a linha do arquivo de dicionário para prosseguir com a descompactação
-					fprintf(fp3, "%c", char_lido);//Printa no arquivo para push posteriormente
-					rewind(*fp);//Volta para o começo do arquivo para prosseguir com a localização do próximo char que deve ser colocado no arquivo de saída
+					qtd_linhas = 1;
+					index_aux = index;
+					fprintf(fp3, "%c", char_lido);
+					rewind(*fp);
 					if (index_aux == 0)
-						parada = 1;//Variável que indica que achou index igual a 0.
+						parada = 1;
 // 					getchar();
 				}
 			}
@@ -168,15 +152,12 @@ void uncompress(FILE **fp, char *nome_arquivo){
 			executa_pop = 0;
 			parada = 0;
 			
-			//Reseta o arquivo auxiliar
 			fclose(fp3);
 			fp3 = fopen("auxiliar.txt", "w+");
-			//Pega a quantidade de bytes já lidos do arquivo
 // 			linha_salva = linha*4;
 //  			printf("LINHA ATUAL = %lld\n", linha);
 // 			if (linha_salva == 92)
 // 				linha_salva += 4;
-			//Volta para a posição anterior do arquivo compactado
 // 			fseek(*fp, linha_salva, SEEK_SET);
 			rewind(*fp);
 			while (linha_salva != linha){
@@ -197,7 +178,6 @@ void uncompress(FILE **fp, char *nome_arquivo){
 	fclose(fp3);
 }
 
-//Função de descomprimir o arquivo .lz78
 void compress(FILE **fp, char *nome_arquivo){
 	
 	FILE *fp2;
@@ -208,7 +188,6 @@ void compress(FILE **fp, char *nome_arquivo){
 	
  	*fp = fopen(nome_arquivo, "r");
 	
-	//Verifica existência do arquivo de leitura
  	if (*fp == NULL){
  		printf("[-] Arquivo inexistente.\n");
  		exit(0);
@@ -216,19 +195,16 @@ void compress(FILE **fp, char *nome_arquivo){
 	
   	fp2 = fopen("compress9.lz78", "w+");
 	
-	//Varre o primeiro arquivo de entrada
 	while ((c = getc(*fp)) != EOF){
-		//Varre o arquivo de dicionário
 		while (fscanf(fp2, "%lld,%c\n", &index, &char_lido) != EOF){
    			if ((c == char_lido) && (index_aux == index)){
-				//Pega a linha correspondente do caracter do dicionário para a leitura da próxima letra.
    				index_aux = linha;
 				ret = 0;
-   				break; //Quebra o loop para procurar pela próxima letra lida do arquivo1.
+   				break;
    			}
    			linha +=1;
 		}
-		if (ret == 1) {//Se não achou uma dupla no dicionário escreve
+		if (ret == 1) {
 			if (c != 10)
 				fprintf(fp2, "%lld,%c\n", index_aux, c);
 			else 
@@ -296,11 +272,23 @@ int main(int argc, char *argv[]){
 // 		printf("Tempo decorrido = %ds\n", tempo_decorrido);
 	}
 	else if (strcmp(argv[2], "U") == 0){
-		tempo_inicio = time(NULL);
+		
+		system("clear");
+		printf("Descompactando....\n");
+		
+// 		tempo_inicio = time(NULL);
+		struct timeval start, stop;
+		double secs = 0;
+		gettimeofday(&start, NULL);
+		
 		uncompress(&fp, argv[1]);
-		tempo_final = time(NULL);
-		tempo_decorrido = difftime(tempo_final,tempo_inicio);
-		printf("Tempo decorrido = %ds\n", tempo_decorrido);
+		
+		gettimeofday(&stop, NULL);
+		secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
+		
+// 		tempo_final = time(NULL);
+// 		tempo_decorrido = difftime(tempo_final,tempo_inicio);
+		printf("Time taken %f\n",secs);
 	}
 	else{
 		printf("[-] Invalid Argument!\n");

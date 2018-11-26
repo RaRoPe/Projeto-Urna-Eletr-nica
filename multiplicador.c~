@@ -1,0 +1,91 @@
+/*void multiplicar(){
+	
+	int8_t opcao;
+	int32_t quantidade, i, votos;
+	
+	FILE *fp, *fp2;
+	
+	printf("Quais votos deseja multiplicar?\n(1) DF\n(2) GO\n(3) MS\n");
+	scanf("%hhd", &opcao);
+	while (opcao < 1 && opcao > 3){
+		printf("OPCAO INVÁLIDA!\n Quais votos deseja multiplicar?\n(0) DF\n(1) GO\n(2) MS\n");
+		scanf("%hhd", &opcao);
+	}
+	if (opcao == 1){
+		fp = fopen("votos_df_multiplicados.txt", "w+");
+		fp2 = fopen("votos_df.txt", "r");
+	} else if (opcao == 2){
+		fp = fopen("votos_go_multiplicados.txt", "w+");
+		fp2 = fopen("votos_go.txt", "r");
+	} else{
+		fp = fopen("votos_ms_multiplicados.txt", "w+");
+		fp2 = fopen("votos_ms.txt", "r");
+	}
+	
+	printf("Por quantas vezes deseja multiplicar os votos? ");
+	scanf("%d", &quantidade);
+	
+	while (fscanf(fp2, "%d", &votos) != EOF){
+		for (i=0;i<quantidade;i+=1){
+			printf("MULTIPLICOU %d VEZES\n", i+1);
+			fprintf(fp, "%d\n", votos);
+		}
+	}
+}*/
+
+void multiplicar(){
+	
+	char CPF[16], regiao, c;
+	
+	int8_t opcao, estado_votado;
+	int16_t partido_regional;
+	int32_t quantidade, i;
+	int64_t quantidade_de_votos = 0, numero_sequencial_de_voto, qtd_votos, codigo_candidato_regional;
+	
+	FILE *fp, *fp2;
+	
+	fp = fopen("votos.txt", "r");
+	
+	if (fp == NULL){
+		printf("[-] ARQUIVO NÃO EXISTE!\n");
+		exit(0);
+	}
+	
+	fp2 = fopen("votos_multiplicados.txt", "w");
+	
+	printf("Por quantas vezes deseja multiplicar os votos? ");
+	scanf("%d", &quantidade);
+	
+	//identificacao;CPF;numero_sequencial_de_voto;regiao;codigo_do_municipio;codigo_do_candidato_federal;codigo_do_candidato_regional;codigo_do_partido_regional;
+	
+	while ((c=getc(fp)) != EOF){
+		if (c == '\n')
+			quantidade_de_votos += 1;
+	}
+	rewind(fp);
+	while ((c=getc(fp)) != EOF){
+		if (c == '\n')
+			break;
+	}
+	rewind(fp);
+	printf("CHEGOU AQUI!\n");
+	flush_in_std();
+//1;regiao;cpf;numero_ sequencial_de_voto;codigo_do_ municipio;codigo_candidato_ federal;codigo_do_partido_ federal;codigo_do_candidato_ regional;codigo_do_partidido_ regional
+	fprintf(fp2, "identificacao;CPF;numero_sequencial_de_voto;regiao;codigo_do_municipio;codigo_do_candidato_federal;codigo_do_candidato_regional;codigo_do_partido_regional;");
+	while (fscanf(fp,"2;H;%[^;];%ld;%hhd;0000;00;%ld;%hd\n", CPF, &qtd_votos, &estado_votado, &codigo_candidato_regional, &partido_regional) != EOF){
+// 		printf("|2;H;%s;%ld;%hhd;0000;00;%ld;%hd|\n", CPF, qtd_votos, estado_votado, codigo_candidato_regional, partido_regional);
+// 		printf("PR = %hd\n", partido_regional);
+		for (i=0;i<quantidade;i+=1){
+			fprintf(fp2,"2;H;%s;%ld;%hhd;0000;00;%ld;%hd\n", CPF, quantidade_de_votos+1, estado_votado, codigo_candidato_regional, partido_regional);
+			quantidade_de_votos += 1;
+// 			if (i == (0.25*quantidade))
+// 				printf("[+] 25 dos votos já foram convertidos\n");
+// 			if (i == (0.5*quantidade))
+// 				printf("[+] 50 dos votos já foram convertidos\n");
+// 			if (i == (0.75*quantidade))
+// 				printf("[+] 75 dos votos já foram convertidos\n");
+		}
+// 		getchar();
+	}
+	printf("VOTOS MULTIPLICADOS %d VEZES!\nAPERTE ENTER PARA CONTINUAR", quantidade);
+}

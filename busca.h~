@@ -4,8 +4,10 @@
 	#define MS 3
 #endif
 
-void localizar_candidato();
-void print_file(FILE *fp);
+char *muda_partido(char partido[3]);
+void localizar_partido(int8_t estado);
+bool localizar_candidato(int32_t numero, int8_t estado, char nome_candidato[80], int8_t *partido_candidato);
+void print_file(int8_t estado);
 void por_estado();
 void por_numero();
 void do_estado();

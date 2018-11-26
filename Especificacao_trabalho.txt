@@ -29,3 +29,6 @@ Máximo de votos = 50.000.000
 Botão de multiplicar votos - votar 50 vezes com candidatos e multiplicar (pode colocar pro usuário multiplicar a quantidade dos votos também).
 
 Região é a letra do grupo (H)
+
+douglasxxdouglas@gmail.com
+douglas_ammirante@hotmail.com.br

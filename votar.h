@@ -1,13 +1,9 @@
-#include<stdbool.h>
+#include <stdbool.h>
 
 #ifndef INTERFACE_H
-//#include "interface.c"
 
-//O eleitor vota em um candidato distrital (DF) ou regional (GO, MS)
-void votar_estadual(int8_t estado);
-//O eleitor vota em um candidato federal
-void votar_federal();
-//Leitura do voto do eleitor
-void votar();
+void votar_estadual(int8_t estado, char CPF[12]);
+void votar_federal(int32_t codigo_candidato_regional, int8_t partido_regional, int8_t estado, char CPF[12]);
+void votar(char CPF[12]);
 
 #endif

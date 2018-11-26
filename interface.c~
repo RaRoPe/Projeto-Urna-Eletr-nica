@@ -1,6 +1,5 @@
 #include "interface.h"
 
-//Função somente para a limpeza do terminal
 void limpa_tela(){
 	if (OS == 0)
 		system("clear");
@@ -14,7 +13,6 @@ void limpa_tela(){
 	}
 }
 
-//Menu para saber do estado do eleitor que deseja votar
 int8_t saberEstado(){
 	
 	int8_t opcao;
@@ -46,16 +44,15 @@ int8_t printa_menu(){
 		"\t\t\t\tMENU\n\n"
 		"Digite a opção que deseja:\n"
 		"(1) Consultar todos os candidatos distritais (DF) ou regionais (GO e ES) por estado.\n"
-		"(2) Fazer uma consulta por um candidato em específico.\n"
+		"(2) Fazer uma consulta pelo número de um candidato para confirmar seu nome e seu partido.\n"
 		"(3) Consultar todos os candidatos de um determinado partido.\n"
 		"(4) Votar em um candidato.\n"
 		"(5) Multiplicar voto x vezes.\n"
 		"(6) Sair\n"
 	);
-	scanf("%hhd", &opcao); //Lê 8 bits de dados
+	scanf("%hhd", &opcao);
 	
-	//Garante que o usuário digite corretamente a opção desejada
-	while ((opcao != 1) && (opcao != 2) && (opcao != 3) && (opcao != 4) && (opcao != 5)){
+	while ((opcao != 1) && (opcao != 2) && (opcao != 3) && (opcao != 4) && (opcao != 5) && (opcao != 6)){
 		printf("Opcao inválida. Insira novamente a opção que deseja\n");
 		scanf("%hhd", &opcao);
 	}

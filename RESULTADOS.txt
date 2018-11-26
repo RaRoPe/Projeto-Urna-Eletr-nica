@@ -152,14 +152,6 @@ BINCONV9.txt					4,301,303 bytes
 compression9.lz78 				722,215 bytes
 Time taken 15020.846992s
 
-				************************
-					TESTE 10
-
-NOME						TAMANHO
-BINCONV10.txt					8,602,615 bytes
-compression10.lz78 				510,191 bytes
-Time taken 3947.590804
-
 -------------------------------------------------------------------------------------------
 				    DESCOMPRESSÃO TXT
 -------------------------------------------------------------------------------------------
@@ -239,4 +231,77 @@ Time taken 1233.180768s
 NOME						TAMANHO
 compression10.lz78				1,074,687 bytes
 saida10.txt					510,191 bytes
-Time taken 3947.590804s
+Time taken 4223.400509s
+
+-------------------------------------------------------------------------------------------
+				    DESCOMPRESSÃO BIN
+-------------------------------------------------------------------------------------------
+					TESTE 1
+
+NOME						TAMANHO
+compression1.lz78				3,630 bytes
+saida1.txt 					 bytes
+Time taken 0.667585s
+				************************
+					TESTE 2
+
+NOME						TAMANHO
+compression2.lz78				4,131 bytes
+saida2.txt 					7,385 bytes
+Time taken 2.133051s
+
+				************************
+					TESTE 3
+
+NOME						TAMANHO
+compression3.lz78				8,395 bytes
+saida3.txt	 				14,197 bytes
+Time taken 7.212428s
+
+				************************
+					TESTE 4
+
+NOME						TAMANHO
+compression4.lz78				16,791 bytes
+saida4.txt	 				26,613 bytes
+Time taken 23.094711s
+
+				************************
+					TESTE 5
+
+NOME						TAMANHO
+compression5.lz78				33,583 bytes
+saida5.txt	 				48,681 bytes
+Time taken 78.489960s
+
+				************************
+					TESTE 6
+
+NOME						TAMANHO
+compression6.lz78				67,167 bytes
+saida6.txt 				86,536 bytes
+Time taken 277.614443s
+
+				************************
+					TESTE 7
+
+NOME						TAMANHO
+compression7.lz78				134,335 bytes
+saida7.txt	 				150,417 bytes
+Time taken 1022.751780s
+
+				************************
+					TESTE 8
+
+NOME						TAMANHO
+compression8.lz78				268,671 bytes
+saida8.txt	 				245,161 bytes
+Time taken 3719.030166s
+
+				************************
+					TESTE 9
+
+NOME						TAMANHO
+compression9.lz78				537,343 bytes
+saida9.txt	 				371,180 bytes
+Time taken 12330.180768s

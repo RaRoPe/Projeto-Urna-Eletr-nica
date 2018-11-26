@@ -1,0 +1,67 @@
+#include "interface.h"
+
+//Função somente para a limpeza do terminal
+void limpa_tela(){
+	if (OS == 0)
+		system("clear");
+	else if (OS == 1)
+		system("cls");
+	else if (OS == 2)
+		printf(" ");
+	else {
+		printf("System not recognized.\n");
+		exit(0);
+	}
+}
+
+//Menu para saber do estado do eleitor que deseja votar
+int8_t saberEstado(){
+	
+	int8_t opcao;
+	
+	printf( "Escolha o seu estado dentre as opções\n"
+		"(1) Distrito Federal\n"
+		"(2) Goiás\n"
+		"(3) Mato Grosso do Sul\n"
+		"Qual o seu estado: "
+	);
+	scanf("%hhd", &opcao);
+	
+	while (opcao != 1 && opcao != 2 && opcao != 3){
+		printf("Opção inválida. Por favor, insira o seu estado novamente: ");
+		scanf("%hhd", &opcao);
+	}
+	
+	return opcao;
+}
+
+int8_t printa_menu(){
+	
+	limpa_tela();
+	
+	int8_t opcao;
+	
+	printf(
+		"\t\t--Bem vindo ao sistema de eleição do IESB--\n\n"
+		"\t\t\t\tMENU\n\n"
+		"Digite a opção que deseja:\n"
+		"(1) Consultar todos os candidatos distritais (DF) ou regionais (GO e ES) por estado.\n"
+		"(2) Fazer uma consulta pelo número de um candidato.\n"
+		"(3) Consultar todos os candidatos de um determinado partido.\n"
+		"(4) Votar em um candidato.\n"
+		"(5) Multiplicar voto x vezes.\n"
+		"(6) Sair\n"
+	);
+	scanf("%hhd", &opcao); //Lê 8 bits de dados
+	
+	//Garante que o usuário digite corretamente a opção desejada
+	while ((opcao != 1) && (opcao != 2) && (opcao != 3) && (opcao != 4) && (opcao != 5) && (opcao != 6)){
+		printf("Opcao inválida. Insira novamente a opção que deseja\n");
+		scanf("%hhd", &opcao);
+	}
+	
+	//printf("%"PRId8"", opcao); //Printa 8 bits de dados
+	//printf("0x%08x", opcao); //Printa 8 bytes em HEXA
+	
+	return opcao;
+}

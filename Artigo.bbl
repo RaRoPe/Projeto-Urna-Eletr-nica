@@ -1,0 +1,35 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.2 }
+
+\bibitem[ARROYUELO et al. 2017]{arroyueloetal2017}
+\abntrefinfo{ARROYUELO et al.}{ARROYUELO et al.}{2017}
+{ARROYUELO et al. lz78 compression in de sufixos. low main memory space.
+\emph{SPIRE}, v. 10508 of LNCS, p. 38--50, 2017.}
+
+\bibitem[comunicação 2018]{eleitores2018}
+\abntrefinfo{comunicação}{COMUNICAçãO}{2018}
+{COMUNICAçãO, A. de. \emph{Brasil tem 147,3 milhões de eleitores aptos a
+  votar nas Eleições 2018}. 2018.
+Dispon{\'\i}vel em:
+  \url{http://www.tse.jus.br/imprensa/noticias-tse/2018/Agosto/brasil-tem-147-3-milhoes-de-eleitores-aptos-\\a-votar-nas-eleicoes-2018}.}
+
+\bibitem[MUTHUSAMY 2012]{muthusamy2012}
+\abntrefinfo{MUTHUSAMY}{MUTHUSAMY}{2012}
+{MUTHUSAMY, Z. Parallel computer architecture and programming project report:
+  Implementation and comparison of parallel lz77 and lz78 algorithms.
+\emph{CMS}, 2012.}
+
+\bibitem[Zeeh 2013]{christinazeeh2013}
+\abntrefinfo{Zeeh}{ZEEH}{2013}
+{ZEEH, C. \emph{The Lempel Ziv Algorithm}. 2013.}
+
+\bibitem[Ziv e Lempel 1977]{jziv1977}
+\abntrefinfo{Ziv e Lempel}{ZIV; LEMPEL}{1977}
+{ZIV, J.; LEMPEL, A. \emph{A universal algorithm for sequential data
+  compression}. [S.l.]: IEEE Transaction on Information Theory, 1977.}
+
+\end{thebibliography}

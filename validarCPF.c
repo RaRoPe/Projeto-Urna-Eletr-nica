@@ -1,25 +1,24 @@
 #include "validarCPF.h"
 
-//Função retirada do livro The C++ Programming Language, 3ª ed. David Vandevoorde; Addison-Wesley, 1998.
 char* itoa(int64_t i, char b[]) {
 	char const digit[] = "0123456789";
 	char *p = b;
 	
-	if (i<0) { // Add in the sign if needed
+	if (i<0) {
 		*p++ = '-';
 		i = -i;
 	}
 	
 	int shifter = i;
 	
-	do { // Move to where the representation ends
+	do {
 		++p;
 		shifter = shifter/10;
 	} while (shifter);
 	
 	*p = '\0';
 	
-	do { // Move back, inserting digits as you go
+	do {
 		*--p = digit[i%10];
 		i = i/10;
 	} while (i);
